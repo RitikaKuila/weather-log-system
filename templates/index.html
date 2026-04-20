@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weather Log</title>
+    <style>
+    body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f9;
+            text-align: center;
+        }
+        h1 {
+        color: #333;
+        }
+        form{
+         margin: 20px auto;
+         padding: 15px;
+         background: white;
+         width: 300px;            
+         border-radius: 10px;
+         box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+        }
+        input{
+        width: 90%;
+        padding: 8px;
+        margin: 8px 0;            
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        }
+        button {
+        padding: 8px 15px;
+           background-color: #007BFF;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        table {
+        margin: 20px auto;
+       border-collapse: collapse;
+        width: 70%;
+        background: white;
+        box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+        }
+        th,td {
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #007BFF;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        a {
+            text-decoration: none;
+            color: red;
+            font-weight: bold;
+        }
+        a:hover {
+            color: darkred;
+        }
+    </style>
+</head>
+<body>
+    <h1>Weather Log System</h1>
+    <form method="POST">
+        <input type="date" name="date" required>
+        <input type="number" name="temperature" placeholder="Temperature" required>
+        <input type="number" name="humidity" placeholder="Humidity" required>
+        <button type="submit">Add</button>
+    </form>
+    <hr>
+    <h2>All Logs</h2>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Date</th>
+            <th>Temp</th>
+            <th>Humidity</th>
+            <th>Action</th>
+        </tr>
+        {% for log in logs %}
+        <tr>
+            <td>{{ log.id }}</td>
+            <td>{{ log.date }}</td>
+            <td>{{ log.temperature }}</td>
+            <td>{{ log.humidity }}</td>
+            <td>
+                <a href="/delete/{{ log.id }}">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+</body>
+</html>

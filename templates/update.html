@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='update.css') }}">
+</head>
+<body>
+    <h2>Update Weather</h2>
+
+<form method="POST">
+    <input type="date" name="date" value="{{ log.date }}">
+    <input type="number" name="temperature" value="{{ log.temperature }}">
+    <input type="number" name="humidity" value="{{ log.humidity }}">
+    <button type="submit">Update</button>
+</form>
+</body>
+</html>

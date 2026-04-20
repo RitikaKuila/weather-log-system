@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='read.css') }}">
+</head>
+<body>
+    <h2>All Logs</h2>
+
+<table border="1">
+<tr>
+    <th>ID</th>
+    <th>Date</th>
+    <th>Temp</th>
+    <th>Humidity</th>
+    <th>Action</th>
+</tr>
+
+{% for log in logs %}
+<tr>
+    <td>{{ log.id }}</td>
+    <td>{{ log.date }}</td>
+    <td>{{ log.temperature }}</td>
+    <td>{{ log.humidity }}</td>
+    <td>
+        <a href="/update/{{ log.id }}">Edit</a>
+        <a href="/delete/{{ log.id }}">Delete</a>
+    </td>
+</tr>
+{% endfor %}
+</table>
+</body>
+</html>

@@ -15,22 +15,23 @@ Users can add, view, update, and delete weather data (temperature and humidity).
 
 
 
-## Project Structure
+## Project Overview
 
-weather-app/
-│── app.py
-│── requirements.txt
-│── README.md
-│── templates/
-│   ├── home.html
-│   ├── create.html
-│   ├── read.html
-│   ├── update.html
-│── static/
-    ├── home.css
-    ├── create.css
-    ├── read.css
-    ├── update.css
+The project is organized into three main parts:
+
+Backend (app.py)
+Handles all Flask routes, database operations, and application logic.
+Frontend (templates/)
+Contains HTML pages:
+home.html → Navigation page
+create.html → Add weather data
+read.html → View all logs
+update.html → Update existing records
+Styling (static/)
+Contains CSS files for each page to make the UI interactive and user-friendly.
+Other Files
+requirements.txt → Project dependencies
+README.md → Project documentation
 
 
 ## How to Run
